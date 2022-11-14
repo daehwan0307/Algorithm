@@ -1,24 +1,20 @@
+
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
+import java.io.FileInputStream;
 
-public class Main {
-	public static void main(String[] args) {
-
-		Scanner in = new Scanner(System.in);
-
-		int[] counting = new int[10];
-
-		int N = in.nextInt();
-
-		while (N != 0) {
-			counting[N % 10]++;
-			N /= 10;
-		}
-
-		for (int i = 9; i >= 0; i--) {
-			while (counting[i]-- > 0) {
-				System.out.print(i);
-			}
-		}
-
+class Main
+{
+	public static void main(String args[]) throws Exception
+	{
+		Scanner sc = new Scanner(System.in);
+		String num = sc.nextLine();
+		String[] strArr = num.split("");
+		Arrays.sort(strArr,Comparator.reverseOrder());
+	
+		for(int i = 0;i<strArr.length;i++)
+		System.out.print(strArr[i]);
+				
 	}
 }
