@@ -1,0 +1,4 @@
+-- 코드를 입력하세요
+SELECT WI.WAREHOUSE_ID, WI.WAREHOUSE_NAME, WI.ADDRESS, ifnull(WI.FREEZER_YN,'N') as FREEZER_YN from FOOD_WAREHOUSE as WI
+where WI.ADDRESS like '%경기도%'
+order by WI.WAREHOUSE_ID asc
