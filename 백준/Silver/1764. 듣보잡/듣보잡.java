@@ -1,31 +1,33 @@
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int m = in.nextInt();
-        in.nextLine(); // 개행 제거
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] inputs = br.readLine().split(" ");
+        int n = Integer.parseInt(inputs[0]);
+        int m = Integer.parseInt(inputs[1]);
 
-        Set<String> unheard = new HashSet<>();
-        List<String> result = new ArrayList<>();
-
+        HashSet<String> set = new HashSet<>(); 
         for (int i = 0; i < n; i++) {
-            unheard.add(in.nextLine());
+            set.add(br.readLine());
         }
 
+        ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < m; i++) {
-            String name = in.nextLine();
-            if (unheard.contains(name)) {
-                result.add(name);
+            String tmp = br.readLine();
+            if(set.contains(tmp)){
+                result.add(tmp);
             }
         }
-
         Collections.sort(result);
-
         System.out.println(result.size());
-        for (String name : result) {
-            System.out.println(name);
+        for (String s : result) {
+            System.out.println(s);
         }
     }
 }
