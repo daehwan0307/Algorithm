@@ -1,6 +1,2 @@
 -- 코드를 입력하세요
-SELECT ANIMAL_INS.NAME , count(*) as 'COUNT' from ANIMAL_INS
-where ANIMAL_INS.NAME is not null 
-group by ANIMAL_INS.NAME
-having  count(*)  >'1'
-order by ANIMAL_INS.NAME asc
+SELECT ANIMAL_INS.NAME as NAME ,count(*) as COUNT from ANIMAL_INS where NAME is not null  group by ANIMAL_INS.NAME HAVING COUNT(*) >= 2 order by ANIMAL_INS.NAME asc ;
